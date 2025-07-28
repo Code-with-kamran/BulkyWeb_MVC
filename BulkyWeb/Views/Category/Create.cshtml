@@ -1,0 +1,28 @@
+﻿@model Category
+<form method="post">
+    <div class="border p-4">
+    <div >
+        <h2>CREATE CATEGORY</h2>
+        <hr />
+    </div>
+    <div class="mb-2">
+            <label asp-for="Name"></label>
+        <input asp-for="Name" required class="form-control" />
+    </div>
+        <div class="mb-2">
+
+            <label asp-for="Description"></label>
+            <input asp-for="Description" required class="form-control" />
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" class="form-control btn btn-primary rounded-3"> Add Product</button>
+        </div>
+            <div class="col-6">
+                <a asp-controller="Category" asp-action="Index" class="form-control btn btn-outline-primary rounded-3">Back to List</a>
+            </div>
+    </div>
+
+
+    </div>
+</form>
