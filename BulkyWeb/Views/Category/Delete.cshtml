@@ -2,29 +2,29 @@
 <form method="post">
     <div class="border p-4">
         <div>
-            <h2>CREATE CATEGORY</h2>
+            <h2>DELETE CATEGORY</h2>
             <hr />
         </div>
         <div>
             <div asp-validation-summary="All">
             </div>
-            @* // we can use ModelOnly to show only model related errors *@
+           
         </div>
         <div class="mb-2">
             <label asp-for="Name"></label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
+            <input asp-for="Name" disabled class="form-control" />
+    
         </div>
         <div class="mb-2">
             <div class="mb-2">
 
                 <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <input asp-for="Description" disabled class="form-control" />
+               
             </div>
             <div class="row">
                 <div class="col-6">
-                    <button type="submit" class="form-control btn btn-primary rounded-3"> Add Product</button>
+                    <button type="submit" class="form-control btn btn-danger rounded-3">Delete</button>
                 </div>
                 <div class="col-6">
                     <a asp-controller="Category" asp-action="Index" class="form-control btn btn-outline-primary rounded-3">Back to List</a>
@@ -36,11 +36,3 @@
 </form>
 
 
-
-@* client side validations using js *@
-
-@section Scripts{
-    @{
-        <partial name="_ValidationScriptsPartial" />
-    }
-}

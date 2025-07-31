@@ -2,7 +2,7 @@
 <form method="post">
     <div class="border p-4">
         <div>
-            <h2>CREATE CATEGORY</h2>
+            <h2>EDIT CATEGORY</h2>
             <hr />
         </div>
         <div>
@@ -10,6 +10,7 @@
             </div>
             @* // we can use ModelOnly to show only model related errors *@
         </div>
+        <input type="hidden" asp-for="CategoryId" />
         <div class="mb-2">
             <label asp-for="Name"></label>
             <input asp-for="Name" class="form-control" />
@@ -24,7 +25,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <button type="submit" class="form-control btn btn-primary rounded-3"> Add Product</button>
+                    <button type="submit" class="form-control btn btn-primary rounded-3"> Update</button>
                 </div>
                 <div class="col-6">
                     <a asp-controller="Category" asp-action="Index" class="form-control btn btn-outline-primary rounded-3">Back to List</a>
@@ -39,7 +40,7 @@
 
 @* client side validations using js *@
 
-@section Scripts{
+@section Scripts {
     @{
         <partial name="_ValidationScriptsPartial" />
     }
