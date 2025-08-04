@@ -1,39 +1,52 @@
-﻿@model Category
-<form method="post">
-    <div class="border p-4">
-        <div>
-            <h2>CREATE CATEGORY</h2>
-            <hr />
-        </div>
-        <div>
-            <div asp-validation-summary="All">
-            </div>
-            @* // we can use ModelOnly to show only model related errors *@
-        </div>
-        <div class="mb-2">
-            <label asp-for="Name"></label>
-            <input asp-for="Name" class="form-control" />
-            <span asp-validation-for="Name" class="text-danger"></span>
-        </div>
-        <div class="mb-2">
-            <div class="mb-2">
+﻿@using Bulky.Models
+@model Category
+<div class="card shadow mt-4 border-0">
 
-                <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+    <div class="card-header bg-secondary bg-gradient ml-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2"> CREATE CATEGORY</h2>
             </div>
-            <div class="row">
-                <div class="col-6">
-                    <button type="submit" class="form-control btn btn-primary rounded-3"> Add Product</button>
+
+        </div>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            <div class="border p-3">
+                
+             
+                 
+                    @* // we can use ModelOnly to show only model related errors *@
+               
+                <div class="form-floating py-2 col-12">
+                    <input asp-for="Name" class="form-control border-0 shadow" />
+                    <label asp-for="Name" class="ms-2"></label>
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
-                <div class="col-6">
-                    <a asp-controller="Category" asp-action="Index" class="form-control btn btn-outline-primary rounded-3">Back to List</a>
+                <div class="mb-2">
+                    <div class="form-floating py-2 col-12">
+
+                        <input asp-for="DisplayOrder" class="form-control border-0 shadow" />
+                        <label asp-for="DisplayOrder" class="ms-2"></label>
+                        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="form-control btn btn-primary rounded-3"> Add Product</button>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a asp-controller="Category" asp-action="Index" class="form-control btn btn-outline-primary rounded-3">Back to List</a>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
 
+        </form>
 
-        </div>
-</form>
+    </div>
+</div>
 
 
 

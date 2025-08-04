@@ -1,0 +1,49 @@
+﻿@page
+@model BulkyWebRazor.Pages.Categories.EditModel
+
+<form method="post">
+    <div class="border p-4">
+        <div>
+            <h2>EDIT CATEGORY</h2>
+            <hr />
+        </div>
+        <div>
+            <div asp-validation-summary="All">
+            </div>
+            @* // we can use ModelOnly to show only model related errors *@
+        </div>
+        <input type="hidden" asp-for="Category.Id" />
+        <div class="mb-2">
+            <label asp-for="Category.Name"></label>
+            <input asp-for="Category.Name" class="form-control" />
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-2">
+            <div class="mb-2">
+
+                <label asp-for="Category.DisplayOrder"></label>
+                <input asp-for="Category.DisplayOrder" class="form-control" />
+                <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <button type="submit" class="form-control btn btn-primary rounded-3"> Update</button>
+                </div>
+                <div class="col-6">
+                    <a asp-page="/Categories/"  class="form-control btn btn-outline-primary rounded-3">Back to List</a>
+                </div>
+            </div>
+
+
+        </div>
+</form>
+
+
+
+@* client side validations using js *@
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
